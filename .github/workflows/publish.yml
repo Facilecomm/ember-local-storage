@@ -39,7 +39,7 @@ jobs:
         run: |
           npm version ${{ github.ref_name }} --no-git-tag-version
           cat package.json
-          pnpm -F @facilecomm/ember-local-storage publish
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
           RELEASE_VERSION: ${{ github.ref_name }}
