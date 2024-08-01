@@ -1,23 +1,5 @@
 {
-  "name": "ember-local-storage",
-  "version": "2.0.7",
-  "description": "The addon provides an ember-data adapter and a storageFor computed property that persists the changes to localStorage or sessionStorage.",
-  "keywords": [
-    "ember-addon",
-    "localStorage",
-    "sessionStorage",
-    "local-storage",
-    "local-storage array",
-    "local-storage object",
-    "session-storage",
-    "session-storage array",
-    "session-storage object",
-    "localStorage adapter",
-    "local-storage adapter"
-  ],
-  "repository": "https://github.com/funkensturm/ember-local-storage.git",
-  "license": "MIT",
-  "author": "Manuel Wiedenmann",
+  "name": "@facilecomm/ember-local-storage",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -94,29 +76,7 @@
   "engines": {
     "node": "12.* || 14.* || >= 16"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
-  },
   "ember": {
     "edition": "octane"
-  },
-  "ember-addon": {
-    "configPath": "tests/dummy/config",
-    "demoURL": "https://www.funkensturm.com/ember-local-storage/"
-  },
-  "release-it": {
-    "plugins": {
-      "release-it-lerna-changelog": {
-        "infile": "CHANGELOG.md",
-        "launchEditor": true
-      }
-    },
-    "git": {
-      "tagName": "v${version}"
-    },
-    "github": {
-      "release": true,
-      "tokenRef": "GITHUB_AUTH"
-    }
   }
 }
