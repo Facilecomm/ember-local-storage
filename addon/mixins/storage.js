@@ -8,6 +8,7 @@ import { associateDestroyableChild } from '@ember/destroyable';
 
 export default Mixin.create({
   _storageKey: null,
+  _syncWindows: null,
   _initialContent: null,
   _initialContentString: null,
   _isInitialContent: true,
