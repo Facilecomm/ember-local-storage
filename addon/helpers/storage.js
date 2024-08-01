@@ -1,7 +1,7 @@
-import { assert } from '@ember/debug';
-import EmberObject, { computed, get } from '@ember/object';
-import { getOwner } from '@ember/application';
-import { dasherize } from '@ember/string';
+import {assert} from '@ember/debug';
+import EmberObject, {computed, get} from '@ember/object';
+import {getOwner} from '@ember/application';
+import {dasherize} from '@ember/string';
 
 const storage = {};
 
@@ -80,6 +80,7 @@ function createStorage(context, key, modelKey) {
 
   const defaultState = {
     _storageKey: _buildKey(context, storageKey),
+    _syncWindows: _addonConfig(context).syncWindows !== false
   };
   const StorageFactory = owner.factoryFor(storageFactory);
 
@@ -117,13 +118,14 @@ function _modelKey(model) {
   return `${modelName}:${id}`;
 }
 
-// TODO: v2.0 - Make modulePrefix the default - needs a warning/error
-function _getNamespace(appConfig, addonConfig) {
+// TODO: v2.0 - Make modulePrefix the default
+function _getNamespace(context) {
   // For backward compatibility this is a opt-in feature
-  let namespace = addonConfig.namespace;
+  let namespace = _addonConfig(context).namespace;
 
   // Shortcut for modulePrefix
   if (namespace === true) {
+    let appConfig = getOwner(context).resolveRegistration('config:environment');
     namespace = appConfig.modulePrefix;
   }
 
@@ -132,12 +134,15 @@ function _getNamespace(appConfig, addonConfig) {
 
 // TODO: Add migration helper
 function _buildKey(context, key) {
-  let appConfig = getOwner(context).resolveRegistration('config:environment');
-  let addonConfig = (appConfig && appConfig['ember-local-storage']) || {};
-  let namespace = _getNamespace(appConfig, addonConfig);
+  let namespace = _getNamespace(context);
   let delimiter = addonConfig.keyDelimiter || ':';
 
   return namespace ? `${namespace}${delimiter}${key}` : key;
+}
+
+function _addonConfig(context) {
+  let appConfig = getOwner(context).resolveRegistration('config:environment');
+  return appConfig && appConfig['ember-local-storage'] || {};
 }
 
 // Testing helper

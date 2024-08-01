@@ -81,6 +81,10 @@ module.exports = function() {
 };
 ```
 
+#### Window Sync
+
+You can set the `syncWindows` option to `false` to disable immediate syncing across windows or tabs. The default is `true`.
+
 #### ember-data support
 
 This addon autodetects if you use ember-data and will include the support for ember-data adapters and serializes by default. You can opt out of this behavior by setting the `includeEmberDataSupport` option to `false`:
