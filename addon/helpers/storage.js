@@ -80,7 +80,7 @@ function createStorage(context, key, modelKey) {
 
   const defaultState = {
     _storageKey: _buildKey(context, storageKey),
-    _syncWindows: _addonConfig(context).syncWindows !== false,
+    _syncWindows: _addonConfig(context).syncWindows ?? true,
   };
   const StorageFactory = owner.factoryFor(storageFactory);
 
