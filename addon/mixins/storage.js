@@ -1,6 +1,6 @@
 import Mixin from '@ember/object/mixin';
-import { set, get } from '@ember/object';
-import { isArray, A } from '@ember/array';
+import { get, set } from '@ember/object';
+import { A, isArray } from '@ember/array';
 import { getStorage } from '../helpers/storage';
 import { copy } from 'ember-copy';
 import { getOwner } from '@ember/application';
@@ -22,7 +22,7 @@ export default Mixin.create({
   init() {
     const storage = this._storage();
     const storageKey = get(this, '_storageKey');
-    const syncWindows = get(this, '_syncWindows')
+    const syncWindows = get(this, '_syncWindows');
     const initialContent = get(this, '_initialContent');
 
     let serialized, content;

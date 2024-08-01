@@ -11,8 +11,8 @@ export function initialize() {
       'The initializer has been deprecated and will be removed in version 3.0.0. Find more information how to remove that deprecation by visiting the url.',
       false,
       {
-        for: 'ember-local-storage',
-        id: 'ember-local-storage.initializers.local-storage-adapter',
+        for: '@facilecomm/ember-local-storage',
+        id: '@facilecomm/ember-local-storage.initializers.local-storage-adapter',
         since: '2.0.5',
         until: '3.0.0',
         url: 'https://github.com/@facilecomm/ember-local-storage#deprecations',

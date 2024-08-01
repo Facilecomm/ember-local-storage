@@ -4,6 +4,12 @@
     "doc": "doc",
     "test": "tests"
   },
+  "keywords": [
+    "ember-addon"
+  ],
+  "author": {
+    "name": "facilecomm"
+  },
   "scripts": {
     "build": "ember build --environment=production",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel \"lint:!(fix)\"",
@@ -82,5 +88,5 @@
   "ember-addon": {
     "configPath": "tests/dummy/config"
   },
-  "version": "1.0.3"
+  "version": "1.0.11"
 }

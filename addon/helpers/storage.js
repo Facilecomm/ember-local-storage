@@ -1,7 +1,7 @@
-import {assert} from '@ember/debug';
-import EmberObject, {computed, get} from '@ember/object';
-import {getOwner} from '@ember/application';
-import {dasherize} from '@ember/string';
+import { assert } from '@ember/debug';
+import EmberObject, { computed, get } from '@ember/object';
+import { getOwner } from '@ember/application';
+import { dasherize } from '@ember/string';
 
 const storage = {};
 
@@ -80,7 +80,7 @@ function createStorage(context, key, modelKey) {
 
   const defaultState = {
     _storageKey: _buildKey(context, storageKey),
-    _syncWindows: _addonConfig(context).syncWindows !== false
+    _syncWindows: _addonConfig(context).syncWindows !== false,
   };
   const StorageFactory = owner.factoryFor(storageFactory);
 
@@ -134,7 +134,9 @@ function _getNamespace(context) {
 
 // TODO: Add migration helper
 function _buildKey(context, key) {
-  let namespace = _getNamespace(context);
+  let appConfig = getOwner(context).resolveRegistration('config:environment');
+  let addonConfig = (appConfig && appConfig['ember-local-storage']) || {};
+  let namespace = _getNamespace(appConfig, addonConfig);
   let delimiter = addonConfig.keyDelimiter || ':';
 
   return namespace ? `${namespace}${delimiter}${key}` : key;
@@ -142,7 +144,7 @@ function _buildKey(context, key) {
 
 function _addonConfig(context) {
   let appConfig = getOwner(context).resolveRegistration('config:environment');
-  return appConfig && appConfig['ember-local-storage'] || {};
+  return (appConfig && appConfig['ember-local-storage']) || {};
 }
 
 // Testing helper
