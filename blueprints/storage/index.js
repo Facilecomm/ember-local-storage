@@ -30,7 +30,7 @@ module.exports = {
 
     var importStatement = [
       'import ' + baseClass,
-      ' from ' + "'ember-local-storage/" + path + "'",
+      ' from ' + "'@facilecomm/ember-local-storage/" + path + "'",
       ';',
     ].join('');
 

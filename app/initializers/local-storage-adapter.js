@@ -1,4 +1,4 @@
 export {
   default,
   initialize,
-} from 'ember-local-storage/initializers/local-storage-adapter';
+} from '@facilecomm/ember-local-storage/initializers/local-storage-adapter';

@@ -3,11 +3,11 @@ import Service, { inject as service } from '@ember/service';
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
 
-import StorageObject from 'ember-local-storage/local/object';
+import StorageObject from '@facilecomm/ember-local-storage/local/object';
 import {
   storageFor,
   _resetStorages,
-} from 'ember-local-storage/helpers/storage';
+} from '@facilecomm/ember-local-storage/helpers/storage';
 
 let subject;
 

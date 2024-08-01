@@ -79,5 +79,8 @@
   "ember": {
     "edition": "octane"
   },
+  "ember-addon": {
+    "configPath": "tests/dummy/config"
+  },
   "version": "1.0.3"
 }

@@ -1,5 +1,5 @@
 import { A } from '@ember/array';
-import StorageArray from 'ember-local-storage/local/array';
+import StorageArray from '@facilecomm/ember-local-storage/local/array';
 
 const Storage = StorageArray.extend();
 

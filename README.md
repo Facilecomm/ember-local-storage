@@ -1,6 +1,6 @@
 # Ember localStorage
 
-[![Build Status](https://github.com/funkensturm/ember-local-storage/actions/workflows/ci.yml/badge.svg)](https://github.com/funkensturm/ember-local-storage/actions/workflows/ci.yml)
+[![Build Status](https://github.com/@facilecomm/ember-local-storage/actions/workflows/ci.yml/badge.svg)](https://github.com/@facilecomm/ember-local-storage/actions/workflows/ci.yml)
 [![npm version](https://badge.fury.io/js/ember-local-storage.svg)](https://www.npmjs.com/package/ember-local-storage)
 [![Ember Observer Score](https://emberobserver.com/badges/ember-local-storage.svg)](https://emberobserver.com/addons/ember-local-storage)
 [![Download](https://img.shields.io/npm/dy/ember-local-storage)](https://www.npmjs.com/package/ember-local-storage)
@@ -31,8 +31,8 @@ See the [CHANGELOG](CHANGELOG.md)
 
 The documentation in this README is for versions `>= 2.0.0`
 
-* Version [1.x](https://github.com/funkensturm/ember-local-storage/tree/v1.7.2#readme)
-* Version [0.x](https://github.com/funkensturm/ember-local-storage/tree/v0.1.5#readme)
+* Version [1.x](https://github.com/@facilecomm/ember-local-storage/tree/v1.7.2#readme)
+* Version [0.x](https://github.com/@facilecomm/ember-local-storage/tree/v0.1.5#readme)
 
 If you upgrade from a version `<= 0.1.5` you need to set a `legacyKey` on the computed `storageFor`:
 ```javascript
@@ -128,7 +128,7 @@ ember g storage stats -s
 ```javascript
 // app/storages/stats.js
 
-import StorageObject from 'ember-local-storage/local/object';
+import StorageObject from '@facilecomm/ember-local-storage/local/object';
 
 const Storage = StorageObject.extend();
 
@@ -188,7 +188,7 @@ ember g storage anonymous-likes -a -s
 ```javascript
 // app/storages/anonymous-likes.js
 
-import StorageArray from 'ember-local-storage/local/array';
+import StorageArray from '@facilecomm/ember-local-storage/local/array';
 
 const Storage = StorageArray.extend();
 
@@ -271,12 +271,12 @@ If your app is a pure LocalStorage app you just need to create the application a
 ```javascript
 // app/adapters/application.js
 
-export { default } from 'ember-local-storage/adapters/local';
-// or export { default } from 'ember-local-storage/adapters/session';
+export { default } from '@facilecomm/ember-local-storage/adapters/local';
+// or export { default } from '@facilecomm/ember-local-storage/adapters/session';
 
 // app/serializers/application.js
 
-export { default } from 'ember-local-storage/serializers/serializer';
+export { default } from '@facilecomm/ember-local-storage/serializers/serializer';
 ```
 
 If you already use Ember Data for non LocalStorage models you can use a per type adapter and serializer.
@@ -284,12 +284,12 @@ If you already use Ember Data for non LocalStorage models you can use a per type
 ```javascript
 // app/adapters/post.js
 
-export { default } from 'ember-local-storage/adapters/local';
-// or export { default } from 'ember-local-storage/adapters/session';
+export { default } from '@facilecomm/ember-local-storage/adapters/local';
+// or export { default } from '@facilecomm/ember-local-storage/adapters/session';
 
 // app/serializers/post.js
 
-export { default } from 'ember-local-storage/serializers/serializer';
+export { default } from '@facilecomm/ember-local-storage/serializers/serializer';
 ```
 
 If you use namespaced models e.g. `blog/post` you have to add the `modelNamespace` property to the corresponding adapter:
@@ -297,8 +297,8 @@ If you use namespaced models e.g. `blog/post` you have to add the `modelNamespac
 ```js
 // app/adapters/blog/post.js
 
-import Adapter from 'ember-local-storage/adapters/local';
-// or import Adapter from 'ember-local-storage/adapters/session';
+import Adapter from '@facilecomm/ember-local-storage/adapters/local';
+// or import Adapter from '@facilecomm/ember-local-storage/adapters/session';
 
 export default class BlogPostAdapter extends Adapter {
   modelNamespace = 'blog';
@@ -404,14 +404,14 @@ module.exports = function() {
 };
 ```
 
-Import `exportData()` and `importData()` from `ember-local-storage/helpers/import-export`.
+Import `exportData()` and `importData()` from `@facilecomm/ember-local-storage/helpers/import-export`.
 Both return a Promise.
 
 ```javascript
 import Route from '@ember/routing/route';
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
-import { importData, exportData } from 'ember-local-storage/helpers/import-export';
+import { importData, exportData } from '@facilecomm/ember-local-storage/helpers/import-export';
 
 export default class IndexRoute extends Route {
   @service store;
@@ -487,7 +487,7 @@ Take a look at the following acceptance tests.
 import { describe, afterEach } from 'mocha';
 import { setupApplicationTest } from 'ember-mocha';
 import setupMirage from 'ember-cli-mirage/test-support/setup-mirage';
-import resetStorages from 'ember-local-storage/test-support/reset-storage';
+import resetStorages from '@facilecomm/ember-local-storage/test-support/reset-storage';
 
 describe('Acceptance | login page', function() {
   let hooks = setupApplicationTest();
@@ -513,7 +513,7 @@ describe('Acceptance | login page', function() {
 import { module, test } from 'qunit';
 import { setupApplicationTest } from 'ember-qunit';
 import { visit, currentURL } from '@ember/test-helpers';
-import resetStorages from 'ember-local-storage/test-support/reset-storage';
+import resetStorages from '@facilecomm/ember-local-storage/test-support/reset-storage';
 
 module('basic acceptance test', function(hooks) {
   let hooks = setupApplicationTest(hooks);
@@ -544,7 +544,7 @@ until: 3.0.0
 The initializer has been deprecated and will be removed in version 3.0.0. This is due to the fact that `ember-data >= 4.12` will no longer allow to `reopen` the `Store`. To remove the deprecation message you need to use the utility functions provided by the addon:
 
 ```javascript
-import { importData, exportData } from 'ember-local-storage/helpers/import-export';
+import { importData, exportData } from '@facilecomm/ember-local-storage/helpers/import-export';
 ```
 
 See the [Export & Import example](#export--import). When you are done you need to set `loadInitializer` to `false`:
@@ -569,7 +569,7 @@ until: 3.0.0
 Using the import-export mixin has been deprecated and will be removed in version 3.0.0. You should use the utility functions provided by the addon:
 
 ```javascript
-import { importData, exportData } from 'ember-local-storage/helpers/import-export';
+import { importData, exportData } from '@facilecomm/ember-local-storage/helpers/import-export';
 ```
 
 See the [Export & Import example](#export--import).

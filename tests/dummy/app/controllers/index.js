@@ -1,6 +1,6 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
-import { storageFor } from 'ember-local-storage/helpers/storage';
+import { storageFor } from '@facilecomm/ember-local-storage/helpers/storage';
 
 export default class extends Controller {
   @storageFor('stats') stats;

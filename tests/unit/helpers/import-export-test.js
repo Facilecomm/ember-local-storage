@@ -4,11 +4,11 @@ import { run } from '@ember/runloop';
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
 import testData from '../../helpers/test-data';
-import SessionStorageAdapter from 'ember-local-storage/adapters/session';
+import SessionStorageAdapter from '@facilecomm/ember-local-storage/adapters/session';
 import {
   importData,
   exportData,
-} from 'ember-local-storage/helpers/import-export';
+} from '@facilecomm/ember-local-storage/helpers/import-export';
 
 module('Unit | Helpers | import/export', function (hooks) {
   setupTest(hooks);

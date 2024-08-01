@@ -3,7 +3,7 @@ import Store from '@ember-data/store';
 import {
   importData,
   exportData,
-} from 'ember-local-storage/helpers/import-export';
+} from '@facilecomm/ember-local-storage/helpers/import-export';
 
 export function initialize() {
   if (!Store.prototype._emberLocalStoragePatched) {
@@ -15,7 +15,7 @@ export function initialize() {
         id: 'ember-local-storage.initializers.local-storage-adapter',
         since: '2.0.5',
         until: '3.0.0',
-        url: 'https://github.com/funkensturm/ember-local-storage#deprecations',
+        url: 'https://github.com/@facilecomm/ember-local-storage#deprecations',
       }
     );
     Store.reopen({

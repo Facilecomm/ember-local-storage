@@ -7,7 +7,7 @@ import { storageFor } from 'ember-local-storage';
 import {
   importData,
   exportData,
-} from 'ember-local-storage/helpers/import-export';
+} from '@facilecomm/ember-local-storage/helpers/import-export';
 
 function readFile(file) {
   const reader = new FileReader();

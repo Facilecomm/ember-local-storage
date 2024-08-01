@@ -7,11 +7,11 @@ import {
   setConfigEnvironment,
 } from '../helpers/storage';
 
-import StorageObject from 'ember-local-storage/local/object';
+import StorageObject from '@facilecomm/ember-local-storage/local/object';
 import {
   storageFor,
   _resetStorages,
-} from 'ember-local-storage/helpers/storage';
+} from '@facilecomm/ember-local-storage/helpers/storage';
 
 let subject;
 

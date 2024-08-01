@@ -7,8 +7,8 @@ import RSVP from 'rsvp';
 import {
   importData,
   exportData,
-} from 'ember-local-storage/helpers/import-export';
-import { _buildKey } from 'ember-local-storage/helpers/storage';
+} from '@facilecomm/ember-local-storage/helpers/import-export';
+import { _buildKey } from '@facilecomm/ember-local-storage/helpers/storage';
 
 // Ember data ships with ember-inflector
 import { singularize, pluralize } from 'ember-inflector';

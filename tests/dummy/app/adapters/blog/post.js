@@ -1,4 +1,4 @@
-import Adapter from 'ember-local-storage/adapters/adapter';
+import Adapter from '@facilecomm/ember-local-storage/adapters/adapter';
 
 export default Adapter.extend({
   modelNamespace: 'blog',

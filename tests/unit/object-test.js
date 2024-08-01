@@ -4,12 +4,12 @@ import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
 import { storageDeepEqual } from '../helpers/storage';
 
-import StorageObject from 'ember-local-storage/local/object';
-import SessionStorageObject from 'ember-local-storage/session/object';
+import StorageObject from '@facilecomm/ember-local-storage/local/object';
+import SessionStorageObject from '@facilecomm/ember-local-storage/session/object';
 import {
   storageFor,
   _resetStorages,
-} from 'ember-local-storage/helpers/storage';
+} from '@facilecomm/ember-local-storage/helpers/storage';
 
 let subject;
 
