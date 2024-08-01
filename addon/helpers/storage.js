@@ -118,14 +118,13 @@ function _modelKey(model) {
   return `${modelName}:${id}`;
 }
 
-// TODO: v2.0 - Make modulePrefix the default
-function _getNamespace(context) {
+// TODO: v2.0 - Make modulePrefix the default - needs a warning/error
+function _getNamespace(appConfig, addonConfig) {
   // For backward compatibility this is a opt-in feature
-  let namespace = _addonConfig(context).namespace;
+  let namespace = addonConfig.namespace;
 
   // Shortcut for modulePrefix
   if (namespace === true) {
-    let appConfig = getOwner(context).resolveRegistration('config:environment');
     namespace = appConfig.modulePrefix;
   }
 
