@@ -80,7 +80,7 @@ export default Mixin.create({
           ) {
             return;
           }
-
+          throw new Error('YOU SHOULD BE THERE', event);
           if (event.newValue) {
             // TODO: Why do we use this.set here? I guess it's the loop bug...
             this.set('content', JSON.parse(event.newValue));
