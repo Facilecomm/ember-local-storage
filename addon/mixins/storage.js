@@ -43,9 +43,9 @@ export default Mixin.create({
     this.set('content', content);
 
     // Keep in sync with other windows
-    // if (syncWindows) {
-    //   this._addStorageListener();
-    // }
+    if (syncWindows) {
+      this._addStorageListener();
+    }
 
     this._super(...arguments);
 
@@ -80,7 +80,7 @@ export default Mixin.create({
           ) {
             return;
           }
-          throw new Error(`YOU SHOULD BE THERE: ${JSON.stringify(event)}}`);
+
           if (event.newValue) {
             // TODO: Why do we use this.set here? I guess it's the loop bug...
             this.set('content', JSON.parse(event.newValue));
