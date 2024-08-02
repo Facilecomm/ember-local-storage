@@ -34,7 +34,7 @@ export default Mixin.create({
     content = this._getInitialContentCopy();
 
     // Retrieve the serialized version from storage.
-    serialized = storage[storageKey];
+    serialized = storage.getItem(storageKey);
     if (serialized) {
       Object.assign(content, JSON.parse(serialized));
     }
