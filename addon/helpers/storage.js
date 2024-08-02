@@ -153,7 +153,7 @@ function _resetStorages() {
 
 // Testing helper
 function getValue(key) {
-  return storages[key] || {};
+  return storages[key];
 }
 
 export { tryStorage, getStorage, storageFor, _resetStorages, _buildKey ,getValue};
