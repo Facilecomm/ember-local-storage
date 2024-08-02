@@ -109,7 +109,7 @@ export default Mixin.create({
         set(this, '_isInitialContent', false);
       }
 
-      storage[storageKey] = json;
+      storage.setItem(storageKey, json);
     }
   },
 
