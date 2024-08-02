@@ -43,9 +43,9 @@ export default Mixin.create({
     this.set('content', content);
 
     // Keep in sync with other windows
-    if (syncWindows) {
-      this._addStorageListener();
-    }
+    // if (syncWindows) {
+    //   this._addStorageListener();
+    // }
 
     this._super(...arguments);
 
